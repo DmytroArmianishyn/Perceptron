@@ -7,9 +7,15 @@ public class Iris {
     private double[] value;
     private String name;
 
+    private double label;
+
     public Iris(double[] value, String name) {
         this.value = value;
         this.name = name;
+        if (name.equals("Iris-versicolor"))
+            this.label=1.0;
+        else
+            this.label=0.0;
     }
 
     public double[] getValue() {
@@ -29,8 +35,16 @@ public class Iris {
     }
 
 
+    public double getLabel() {
+        return label;
+    }
+
+    public void setLabel(double label) {
+        this.label = label;
+    }
+
     @Override
     public String toString() {
-        return "Iris [" + Arrays.toString(value) + "]";
+        return "Iris " + name + " [" + Arrays.toString(value) + " " + label +  "]";
     }
 }
