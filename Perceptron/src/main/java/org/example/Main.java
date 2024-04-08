@@ -14,21 +14,16 @@ public class Main {
         SystemClass system = new SystemClass();
         List<Iris> irisList = new ArrayList<>();
         system.read("D:\\Java\\TPO\\StatBasket\\Perceptron\\src\\files\\traning",irisList);
-        System.out.println(irisList);
+
         Perceptron perceptron = new Perceptron(4);
 
-        for (int i = 0; i <irisList.size() ; i++) {
-            int predicted =  perceptron.classify(irisList.get(i).getValue());
 
-            int error= (int) (irisList.get(i).getLabel()-predicted);
 
-          perceptron.learnWeights(irisList.get(i).getValue(),error,0.1,(int )irisList.get(i).getLabel());
+            system.start(perceptron,irisList);
 
 
 
-        }
 
-        System.out.println((double) perceptron.count/irisList.size()*100);
 
 
         double[] dany = new double[]{6.3,2.7,4.9,1.8};

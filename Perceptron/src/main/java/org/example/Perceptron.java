@@ -11,6 +11,12 @@ public class Perceptron {
    private double bias;
    int count=0;
 
+   int lastChoice;
+
+   int versicolorCount;
+
+   int virginicaCount;
+
 
 
 
@@ -19,14 +25,16 @@ public class Perceptron {
 
         for (int i = 0; i <size ; i++) {
             weights[i]=(Math.random()*2)+-1;
-            System.out.println(weights[i]);
+
         }
-        bias=3;
+        bias=Math.random();
+        versicolorCount=0;
+        virginicaCount=0;
 
     }
 
     public int classify(double[] input){
-        double sum=0;
+        double sum=bias;
 
         for (int i = 0; i <input.length ; i++) {
 
@@ -47,12 +55,16 @@ public class Perceptron {
         }
         bias += learningRate*choice;
 
-        System.out.println(choice);
 
 
-if (choice==right){
-    count++;
-}
+    lastChoice=choice;
+    if (choice==right){
+        count++;
+    }
+    if (choice==1){
+        versicolorCount++;
+    }
+    else virginicaCount++;
 
 
 
