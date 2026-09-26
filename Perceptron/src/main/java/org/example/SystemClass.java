@@ -88,7 +88,7 @@ public void traning(Perceptron perceptron , List<Iris> irisList){
      }
      int predicted =  perceptron.classify(values);
      int error= ((int) 0-predicted);
-     perceptron.learnWeights(values,error,0.1,0);
+     perceptron.learnWeights(values,error,0.1,1);
      String classy= (perceptron.lastChoice==1)?" versicolor":" virginica";
      System.out.println(perceptron.lastChoice + classy);
  }

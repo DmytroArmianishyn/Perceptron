@@ -22,12 +22,7 @@ JSONParser parser = new JSONParser();
 
            Object obj = JSONValue.parse(fileReader);
            JSONArray array = (JSONArray) obj;
-            System.out.println(array.get(0).g);
 
-            for (:
-                 ) {
-                
-            }
 
 
         } catch (IOException e) {
